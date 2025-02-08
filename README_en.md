@@ -24,7 +24,7 @@
 - 熟悉React Native
 - 对AI应用感兴趣
 
-欢迎贡献，一起把这个强大的AI助手带到iOS平台！
+欢迎加入我们，一起把这个强大的AI助手带到iOS平台！
 
 ## 🚀 快速开始
 
@@ -56,9 +56,7 @@
 
 ## 🛠️ 开发配置
 
-我们特别欢迎iOS开发者的加入！
-
-如果你想参与开发，请按以下步骤配置环境：
+我们特别欢迎iOS开发者的加入！如果你想参与开发，请按以下步骤配置环境：
 
 ### 环境要求
 
@@ -66,7 +64,6 @@
 - Yarn
 - React Native CLI
 - Android Studio (安卓开发)
-- Xcode (iOS开发，仅macOS)
 
 ### 开发步骤
 
@@ -82,47 +79,14 @@
    yarn install
    ```
 
-3. **iOS专属配置**
+3. **运行项目**
    ```bash
-   cd ios
-   pod install  # 安装iOS依赖
-   cd ..
+   # 启动安卓
+   yarn android
+   
+   # 启动Metro
+   yarn start
    ```
-
-4. **运行项目**
-
-   安卓：
-   ```bash
-   yarn android  # 启动安卓应用
-   ```
-
-   iOS：
-   ```bash
-   yarn ios  # 启动iOS模拟器
-   ```
-
-   启动开发服务器：
-   ```bash
-   yarn start  # 启动Metro服务
-   ```
-
-### 实用脚本
-
-- **清理构建文件**
-  ```bash
-  yarn clean
-  ```
-
-- **代码检查**
-  ```bash
-  yarn lint      # 代码风格检查
-  yarn typecheck # 类型检查
-  ```
-
-- **运行测试**
-  ```bash
-  yarn test
-  ```
 
 ## 🤝 参与贡献
 
@@ -135,57 +99,21 @@
 - 📖 文档完善
 - 🐛 Bug修复
 
-### 贡献指南
+### 贡献步骤
 
-1. **Fork 仓库**
-    - 访问项目主页，点击 Fork 按钮
-
-2. **创建功能分支**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **开发并测试**
-    - 对于安卓：
-      ```bash
-      yarn android
-      ```
-    - 对于iOS：
-      ```bash
-      yarn ios
-      ```
-
-4. **代码检查**
-   ```bash
-   yarn lint      # 代码风格检查
-   yarn typecheck # 类型检查
-   ```
-
-5. **提交代码**
-    - 使用规范的提交信息格式：
-      ```bash
-      git commit -m "feat: 添加新功能"
-      git commit -m "fix: 修复某个问题"
-      ```
-
-6. **推送并创建 Pull Request**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-    - 访问 GitHub，创建 Pull Request
-    - 详细描述你的改动
-
-我们会认真审查每一个 Pull Request，并及时反馈。
+1. Fork 本仓库
+2. 创建新分支 (git checkout -b feature/your-feature)
+3. 提交改动 (git commit -m 'feat: add new feature')
+4. 推送到远程 (git push origin feature/your-feature)
+5. 创建 Pull Request
 
 ## 📝 开发计划
 
 重点目标：
 - [ ] **iOS版本开发**: 寻找iOS开发者共同开发，让更多用户受益
-- [ ] 支持更多中文模型
-- [ ] 优化更多安卓设备兼容性
-- [ ] 改进文本复制功能
 - [ ] 增强用户界面体验
-- [ ] 完善开发文档
+- [ ] 增加本地知识库功能
+- [ ] 增加联网功能
 
 ## 📞 联系方式
 
