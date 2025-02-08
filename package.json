@@ -1,7 +1,7 @@
 {
   "name": "PocketPal",
-  "version": "1.6.8",
-  "date": "20250206",
+  "version": "1.6.9",
+  "date": "20250207",
   "private": true,
   "scripts": {
     "prepare": "husky",

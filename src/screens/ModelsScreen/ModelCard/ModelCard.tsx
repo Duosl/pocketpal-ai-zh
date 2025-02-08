@@ -180,12 +180,44 @@ export const ModelCard: React.FC<ModelCardProps> = observer(
         modelStore.manualReleaseContext();
       } else {
         try {
+          // 先检查文件完整性
+          const {errorMessage} = await checkModelFileIntegrity(model, modelStore);
+
+          if (errorMessage) {
+            // 如果检查到文件不完整，弹出提示
+            Alert.alert(
+              '模型文件不完整',
+              '检测到模型文件可能不完整或已损坏，请删除后重新下载。',
+              [
+                {
+                  text: '重新下载',
+                  onPress: async () => {
+                    await modelStore.deleteModel(model);
+                    modelStore.checkSpaceAndDownload(model.id);
+                  },
+                },
+                {
+                  text: '取消',
+                  style: 'cancel',
+                },
+              ],
+            );
+            return;
+          }
+
+          // 文件完整性检查通过，继续加载模型
           await modelStore.initContext(model);
           if (uiStore.autoNavigatetoChat) {
             navigation.navigate('Chat');
           }
         } catch (e) {
           console.log(`Error: ${e}`);
+          // 可以添加错误提示
+          Alert.alert(
+            '加载失败',
+            '模型加载过程中发生错误，请重试。',
+            [{text: '确定'}],
+          );
         }
       }
     }, [isActiveModel, model, navigation]);
@@ -214,7 +246,7 @@ export const ModelCard: React.FC<ModelCardProps> = observer(
     // 添加格式化函数
     const formatModelStats = (size: number, params: number) => {
       // 转换字节到 GB
-      const sizeInGB = (size / (1024 * 1024 * 1024)).toFixed(2);
+      const sizeInGB = (size / (1000 * 1000 * 1000)).toFixed(2);
 
       // 转换参数到十亿
       const paramsInB = (params / 1000000000).toFixed(1);

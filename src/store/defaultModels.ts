@@ -13,7 +13,7 @@ const crossPlatformModels: Model[] = [
     {
       id: 'unsloth/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf',
       author: 'unsloth',
-      name: "深度思考标准版（推荐）",
+      name: "DeepSeek R1 深度思考（推荐）",
       type: 'DeepSeek 推理模型',
       description: "轻巧高效，适合绝大数机型",
       size: 1117320576, // 1.12GB
@@ -57,7 +57,7 @@ const crossPlatformModels: Model[] = [
     {
       id: 'mradermacher/DeepSeek-R1-Distill-Qwen-1.5B-uncensored-GGUF/DeepSeek-R1-Distill-Qwen-1.5B-uncensored.Q4_K_M.gguf',
       author: 'mradermacher',
-      name: "深度思考无拘版",
+      name: "DeepSeek 深度思考无拘版",
       type: 'DeepSeek 推理模型',
       description: "放飞自我，无拘无束的无限制版本",
       size: 1117320576, // 1.12GB 转换为字节（参考标准版的大小）
@@ -101,7 +101,7 @@ const crossPlatformModels: Model[] = [
     {
      id: 'unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF/DeepSeek-R1-Distill-Qwen-7B-Q2_K.gguf',
      author: 'unsloth',
-     name: "深度思考专业版",
+     name: "DeepSeek 深度思考专业版",
      type: 'DeepSeek 推理模型',
      description: "高性能专业强大的智能助理",
      size: 3015939808, // 3.02GB 转换为字节
@@ -145,7 +145,7 @@ const crossPlatformModels: Model[] = [
     {
      id: 'unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf',
      author: 'unsloth',
-     name: "深度思考旗舰版",
+     name: "DeepSeek 深度思考旗舰版",
      type: 'DeepSeek 推理模型',
      description: "旗舰配置，快速精准地完成各类任务",
      size: 4683073248, // 4.68GB 转换为字节
@@ -189,7 +189,7 @@ const crossPlatformModels: Model[] = [
     {
       id: 'unsloth/DeepSeek-R1-Distill-Qwen-14B-GGUF/DeepSeek-R1-Distill-Qwen-14B-Q2_K.gguf',
       author: 'unsloth',
-      name: "深度思考至尊版",
+      name: "DeepSeek 深度思考至尊版",
       type: 'DeepSeek 推理模型',
       description: "14B顶配模型，适合高性能机型",
       size: 5775743744, // 5.77GB 转换为字节
