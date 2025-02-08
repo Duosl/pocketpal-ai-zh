@@ -2,6 +2,12 @@
 
 口袋AI是一款强大的离线AI助手，让你随时随地与AI对话！基于小型语言模型(SLMs)，无需联网即可在手机上运行，是[PocketPal AI](https://github.com/a-ghorbani/pocketpal-ai)项目的中文优化版本。
 
+![](https://files.mdnice.com/user/43439/706c3e5d-1996-4b5c-a24b-297af69328ec.jpg)
+
+
+使用指南：
+https://mp.weixin.qq.com/s/szj3L6RdFhZYPgCcP_9YEw
+
 ## ✨ 特色功能
 
 - **离线运行**: 所有AI模型都在本地运行，无需担心网络问题
