@@ -35,4 +35,13 @@ export const createStyles = (theme: Theme) =>
       marginBottom: 4,
       lineHeight: 20,
     },
+      copyrightContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 8,
+      },
+      copyrightText: {
+        opacity: 0.7,
+        lineHeight: 20,
+      },
   });

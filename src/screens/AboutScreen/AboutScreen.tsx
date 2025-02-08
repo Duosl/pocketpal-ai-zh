@@ -111,6 +111,20 @@ const AboutScreen = () => {
           />
         </Card.Content>
       </Card>
+        {/* Copyright Notice Card */}
+        <Card style={styles.card}>
+          <Card.Content>
+            <View style={styles.copyrightContainer}>
+              <Text variant="bodyMedium" style={styles.copyrightText}>
+                This software is based on pocketpal-ai
+              </Text>
+              <Text variant="bodyMedium" style={styles.copyrightText}>
+                Copyright (c) 2024 Asghar Ghorbani
+              </Text>
+            </View>
+          </Card.Content>
+        </Card>
+
     </ScrollView>
   );
 };
