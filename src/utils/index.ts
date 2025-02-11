@@ -20,9 +20,7 @@ import {
   User,
 } from './types';
 
-export const L10nContext = React.createContext<
-  (typeof l10n)[keyof typeof l10n]
->(l10n.zh);
+export const L10nContext = React.createContext<(typeof l10n)[keyof typeof l10n]>(l10n.zh);
 export const UserContext = React.createContext<User | undefined>(undefined);
 
 /**
@@ -106,7 +104,7 @@ export const hashCode = (text = '') => {
 
 /** Inits dayjs locale */
 export const initLocale = (locale?: keyof typeof l10n) => {
-  const locales: {[key in keyof typeof l10n]: unknown} = {
+  const locales: {[key in keyof typeof l10n]: any} = {
     en: require('dayjs/locale/en'),
     es: require('dayjs/locale/es'),
     ko: require('dayjs/locale/ko'),

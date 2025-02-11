@@ -1,14 +1,11 @@
 import axios from 'axios';
 import {submitBenchmark} from '../benchmark';
-import * as fb from '../../utils/fb';
 import {urls} from '../../config';
 import {DeviceInfo, BenchmarkResult} from '../../utils/types';
 
 jest.mock('axios');
-jest.mock('../../utils/fb');
 
 const mockedAxios = axios as jest.Mocked<typeof axios>;
-const mockedFb = fb as jest.Mocked<typeof fb>;
 
 describe('submitBenchmark', () => {
   const mockDeviceInfo: DeviceInfo = {
@@ -66,7 +63,6 @@ describe('submitBenchmark', () => {
     uuid: 'test-uuid',
   };
 
-  const mockAppCheckToken = 'mock-app-check-token';
   const mockResponse = {
     data: {
       message: 'Success',
@@ -76,17 +72,11 @@ describe('submitBenchmark', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-
-    mockedFb.getAppCheckToken.mockResolvedValue(mockAppCheckToken);
     mockedAxios.post.mockResolvedValue(mockResponse);
   });
 
   it('should successfully submit benchmark data', async () => {
     const result = await submitBenchmark(mockDeviceInfo, mockBenchmarkResult);
-
-    // Verify AppCheck initialization and token retrieval
-    expect(mockedFb.initializeAppCheck).toHaveBeenCalled();
-    expect(mockedFb.getAppCheckToken).toHaveBeenCalled();
 
     // Verify API call
     expect(mockedAxios.post).toHaveBeenCalledWith(
@@ -97,7 +87,6 @@ describe('submitBenchmark', () => {
       },
       {
         headers: {
-          'X-Firebase-AppCheck': mockAppCheckToken,
           'Content-Type': 'application/json',
         },
       },
@@ -108,16 +97,6 @@ describe('submitBenchmark', () => {
       message: 'Success',
       id: 123,
     });
-  });
-
-  it('should throw error when AppCheck token is not available', async () => {
-    mockedFb.getAppCheckToken.mockResolvedValue('');
-
-    await expect(
-      submitBenchmark(mockDeviceInfo, mockBenchmarkResult),
-    ).rejects.toThrow('Failed to obtain App Check token');
-
-    expect(mockedAxios.post).not.toHaveBeenCalled();
   });
 
   it('should handle API errors', async () => {

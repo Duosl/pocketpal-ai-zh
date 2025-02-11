@@ -1,5 +1,101 @@
 /** Base chat l10n containing all required properties to provide localized copy. */
 export const l10n = {
+  zh: {
+    attachmentButtonAccessibilityLabel: '发送媒体文件', // 更明确的表达
+    emptyChatPlaceholder: '开始和 AI 对话吧', // 更友好的空状态提示
+    fileButtonAccessibilityLabel: '文件',
+    inputPlaceholder: '输入消息',
+    sendButtonAccessibilityLabel: '发送',
+    modelNotLoaded: '模型尚未加载，请先完成初始化', // 更清晰的状态说明
+    loadingModel: '模型加载中...',
+    typeYourMessage: '说点什么吧...', // 更自然的提示语
+    conversationReset: '对话已清空', // 更符合中文表达习惯
+    networkError: '网络连接失败，请检查后重试', // 更详细的错误提示
+    goToModels: '前往配置AI', // 更简洁的表达
+    readyToChat: '要开始对话吗？点击加载上次使用的模型', // 更自然的引导语
+    pleaseLoadModel: '请加载AI开始聊天', // 更清晰的指引
+    shortMemoryWarning: '内存不足提醒', // 更符合常见表达
+    memoryWarning: '提醒：模型大小接近或超过设备内存上限（{{totalMemory}} GB），可能会导致运行缓慢或不稳定',
+    load: '加载',
+    cancel: '取消',
+    download: '下载',
+    offload: '释放内存', // 更容易理解的表达
+    reset: '重置',
+    delete: '删除',
+    dismiss: '知道了', // 更符合中文表达习惯
+    replace: '替换',
+    keepBoth: '保留全部', // 更自然的表达
+    fileAlreadyExists: '文件已存在',
+    fileAlreadyExistsMessage: '发现同名文件，请选择处理方式：', // 更清晰的提示语
+    addLocalModel: '添加本地模型',
+    localModel: '本地模型',
+    hfModel: 'HuggingFace模型',
+    hfFABLabel: '从HuggingFace添加',
+    localFABLabel: '添加本地模型',
+    resetFABLabel: '重置',
+    downloaded: '已下载',
+    grouped: '已分组',
+    proceedWithReset: '确认重置', // 简化重复用语
+    confirmReset: '确定要重置吗？', // 更符合常见提示语
+    modelSettingsTitle: '模型设置',
+    autoOffloadLoad: '自动内存管理', // 更容易理解的表达
+    autoOffloadLoadDescription: '当应用切换到后台时自动释放模型内存', // 更清晰的功能说明
+    metal: 'Metal加速', // 更明确的功能说明
+    metalDescription: '使用Apple设备的硬件加速功能', // 更容易理解的说明
+    layersOnGPU: 'GPU加载层数：{{gpuLayers}}',
+    contextSize: '上下文长度', // 更符合领域用语
+    contextSizePlaceholder: '请输入上下文长度（最小 {{minContextSize}}）',
+    invalidContextSizeError: '请输入不小于 {{minContextSize}} 的数值',
+    modelReloadNotice: '更改将在重新加载模型后生效',
+    autoNavigateToChat: '自动进入对话', // 更自然的表达
+    autoNavigateToChatDescription: '加载完成后自动切换到对话界面',
+    uiSettingsTitle: '界面设置',
+    darkMode: '深色模式',
+    darkModeDescription: '切换深色/浅色显示模式', // 更完整的说明
+    displayMemoryUsage: '显示内存占用', // 更准确的表达
+    displayMemoryUsageDescription: '在对话界面显示内存使用情况',
+    tooltipGroupByType: '按类型分组', // 简化表达
+    tooltipDownloaded: '仅看已下载', // 更简洁的表达
+    tooltipHf: '浏览HuggingFace模型', // 更明确的功能描述
+    unknownGroup: '其他', // 更符合中文使用习惯
+    menuTitleHf: 'HuggingFace模型库', // 更完整的表达
+    menuTitleDownloaded: '已下载模型',
+    menuTitleGrouped: '模型分组', // 简化表达
+    menuTitleReset: '重置模型列表',
+    iOSBackgroundDownload: '后台下载',
+    iOSBackgroundDownloadDescription: '允许在后台继续下载（下载速度可能较慢）',
+    availableToUse: '可立即使用', // 更明确的状态描述
+    availableToDownload: '可下载', // 简化表达
+    useAddButtonForMore: '点击"+"浏览更多模型', // 更清晰的操作指引
+
+    // 模型设置部分
+    'modelSettings.grammar': '启用语法规则，确保生成内容符合指定的格式要求',
+    'modelSettings.stop': '设置终止词，用于控制文本生成的结束条件',
+    'modelSettings.n_predict': '设置生成文本的最大长度（按标记数计算）',
+    'modelSettings.n_probs': '显示候选词的概率分布',
+    'modelSettings.top_k': '通过限制候选词数量来控制输出的发散程度，数值越小生成内容越集中',
+    'modelSettings.top_p': '控制输出的多样性，值越接近1.0生成内容越丰富但可能越不集中',
+    'modelSettings.min_p': '设置词语筛选的概率阈值，用于过滤低概率词语，减少不相关内容',
+    'modelSettings.temperature': '调节输出的随机性，值越高创意性越强但可能越不严谨',
+    'modelSettings.penalty_last_n': '检查重复的范围，值越大越能防止长距离重复',
+    'modelSettings.penalty_repeat': '重复内容惩罚度，值越高越倾向使用不同的表达',
+    'modelSettings.penalty_freq': '高频词惩罚度，值越高越倾向使用更丰富的词汇',
+    'modelSettings.penalty_present': '重复主题惩罚度，值越高内容越多样',
+    'modelSettings.mirostat': '智能创意控制系统，选择1或2（更平滑）来动态调节输出的随机性',
+    'modelSettings.mirostat_tau': '设置Mirostat的创意程度目标值，越高创意性越强，越低越严谨',
+    'modelSettings.mirostat_eta': 'Mirostat的调节速度，值越高调整越快',
+    'modelSettings.dry_multiplier': '重复控制的强度倍数，越高越严格防止重复',
+    'modelSettings.dry_base': '重复控制的基础惩罚值，越高越严格',
+    'modelSettings.dry_allowed_length': '允许重复的最大字数',
+    'modelSettings.dry_penalty_last_n': '重复检查的历史长度',
+    'modelSettings.dry_sequence_breakers': '重复检查的重置标记',
+    'modelSettings.ignore_eos': '忽略模型的自然结束，强制继续生成更多内容',
+    'modelSettings.logit_bias': '调整特定词语出现的倾向',
+    'modelSettings.seed': '设置随机种子，用于复现生成结果',
+    'modelSettings.xtc_probability': 'XTC词语筛选概率，0表示关闭',
+    'modelSettings.xtc_threshold': 'XTC词语筛选的概率阈值（大于0.5时关闭）',
+    'modelSettings.typical_p': '启用典型采样，设置采样参数p（1.0表示关闭）'
+  },
   en: {
     attachmentButtonAccessibilityLabel: 'Send media',
     emptyChatPlaceholder: 'No messages here yet',
@@ -1041,100 +1137,4 @@ export const l10n = {
     'modelSettings.logit_bias': 'Modificar probabilidad de tokens específicos',
     'modelSettings.seed': 'Semilla del generador de números aleatorios',
   },
-  zh: {
-      attachmentButtonAccessibilityLabel: '发送媒体文件',  // 更明确的表达
-      emptyChatPlaceholder: '开始和 AI 对话吧',  // 更友好的空状态提示
-      fileButtonAccessibilityLabel: '文件',
-      inputPlaceholder: '输入消息',
-      sendButtonAccessibilityLabel: '发送',
-      modelNotLoaded: '模型尚未加载，请先完成初始化',  // 更清晰的状态说明
-      loadingModel: '模型加载中...',
-      typeYourMessage: '说点什么吧...',  // 更自然的提示语
-      conversationReset: '对话已清空',  // 更符合中文表达习惯
-      networkError: '网络连接失败，请检查后重试',  // 更详细的错误提示
-      goToModels: '前往配置AI',  // 更简洁的表达
-      readyToChat: '要开始对话吗？点击加载上次使用的模型',  // 更自然的引导语
-      pleaseLoadModel: '请加载AI开始聊天',  // 更清晰的指引
-      shortMemoryWarning: '内存不足提醒',  // 更符合常见表达
-      memoryWarning: '提醒：模型大小接近或超过设备内存上限（{{totalMemory}} GB），可能会导致运行缓慢或不稳定',
-      load: '加载',
-      cancel: '取消',
-      download: '下载',
-      offload: '释放内存',  // 更容易理解的表达
-      reset: '重置',
-      delete: '删除',
-      dismiss: '知道了',  // 更符合中文表达习惯
-      replace: '替换',
-      keepBoth: '保留全部',  // 更自然的表达
-      fileAlreadyExists: '文件已存在',
-      fileAlreadyExistsMessage: '发现同名文件，请选择处理方式：',  // 更清晰的提示语
-      addLocalModel: '添加本地模型',
-      localModel: '本地模型',
-      hfModel: 'HuggingFace模型',
-      hfFABLabel: '从HuggingFace添加',
-      localFABLabel: '添加本地模型',
-      resetFABLabel: '重置',
-      downloaded: '已下载',
-      grouped: '已分组',
-      proceedWithReset: '确认重置',  // 简化重复用语
-      confirmReset: '确定要重置吗？',  // 更符合常见提示语
-      modelSettingsTitle: '模型设置',
-      autoOffloadLoad: '自动内存管理',  // 更容易理解的表达
-      autoOffloadLoadDescription: '当应用切换到后台时自动释放模型内存',  // 更清晰的功能说明
-      metal: 'Metal加速',  // 更明确的功能说明
-      metalDescription: '使用Apple设备的硬件加速功能',  // 更容易理解的说明
-      layersOnGPU: 'GPU加载层数：{{gpuLayers}}',
-      contextSize: '上下文长度',  // 更符合领域用语
-      contextSizePlaceholder: '请输入上下文长度（最小 {{minContextSize}}）',
-      invalidContextSizeError: '请输入不小于 {{minContextSize}} 的数值',
-      modelReloadNotice: '更改将在重新加载模型后生效',
-      autoNavigateToChat: '自动进入对话',  // 更自然的表达
-      autoNavigateToChatDescription: '加载完成后自动切换到对话界面',
-      uiSettingsTitle: '界面设置',
-      darkMode: '深色模式',
-      darkModeDescription: '切换深色/浅色显示模式',  // 更完整的说明
-      displayMemoryUsage: '显示内存占用',  // 更准确的表达
-      displayMemoryUsageDescription: '在对话界面显示内存使用情况',
-      tooltipGroupByType: '按类型分组',  // 简化表达
-      tooltipDownloaded: '仅看已下载',  // 更简洁的表达
-      tooltipHf: '浏览HuggingFace模型',  // 更明确的功能描述
-      unknownGroup: '其他',  // 更符合中文使用习惯
-      menuTitleHf: 'HuggingFace模型库',  // 更完整的表达
-      menuTitleDownloaded: '已下载模型',
-      menuTitleGrouped: '模型分组',  // 简化表达
-      menuTitleReset: '重置模型列表',
-      iOSBackgroundDownload: '后台下载',
-      iOSBackgroundDownloadDescription: '允许在后台继续下载（下载速度可能较慢）',
-      availableToUse: '可立即使用',  // 更明确的状态描述
-      availableToDownload: '可下载',  // 简化表达
-      useAddButtonForMore: '点击"+"浏览更多模型',  // 更清晰的操作指引
-
-      // 模型设置部分
-      'modelSettings.grammar': '启用语法规则，确保生成内容符合指定的格式要求',
-      'modelSettings.stop': '设置终止词，用于控制文本生成的结束条件',
-      'modelSettings.n_predict': '设置生成文本的最大长度（按标记数计算）',
-      'modelSettings.n_probs': '显示候选词的概率分布',
-      'modelSettings.top_k': '通过限制候选词数量来控制输出的发散程度，数值越小生成内容越集中',
-      'modelSettings.top_p': '控制输出的多样性，值越接近1.0生成内容越丰富但可能越不集中',
-      'modelSettings.min_p': '设置词语筛选的概率阈值，用于过滤低概率词语，减少不相关内容',
-      'modelSettings.temperature': '调节输出的随机性，值越高创意性越强但可能越不严谨',
-      'modelSettings.penalty_last_n': '检查重复的范围，值越大越能防止长距离重复',
-      'modelSettings.penalty_repeat': '重复内容惩罚度，值越高越倾向使用不同的表达',
-      'modelSettings.penalty_freq': '高频词惩罚度，值越高越倾向使用更丰富的词汇',
-      'modelSettings.penalty_present': '重复主题惩罚度，值越高内容越多样',
-      'modelSettings.mirostat': '智能创意控制系统，选择1或2（更平滑）来动态调节输出的随机性',
-      'modelSettings.mirostat_tau': '设置Mirostat的创意程度目标值，越高创意性越强，越低越严谨',
-      'modelSettings.mirostat_eta': 'Mirostat的调节速度，值越高调整越快',
-      'modelSettings.dry_multiplier': '重复控制的强度倍数，越高越严格防止重复',
-      'modelSettings.dry_base': '重复控制的基础惩罚值，越高越严格',
-      'modelSettings.dry_allowed_length': '允许重复的最大字数',
-      'modelSettings.dry_penalty_last_n': '重复检查的历史长度',
-      'modelSettings.dry_sequence_breakers': '重复检查的重置标记',
-      'modelSettings.ignore_eos': '忽略模型的自然结束，强制继续生成更多内容',
-      'modelSettings.logit_bias': '调整特定词语出现的倾向',
-      'modelSettings.seed': '设置随机种子，用于复现生成结果',
-      'modelSettings.xtc_probability': 'XTC词语筛选概率，0表示关闭',
-      'modelSettings.xtc_threshold': 'XTC词语筛选的概率阈值（大于0.5时关闭）',
-      'modelSettings.typical_p': '启用典型采样，设置采样参数p（1.0表示关闭）'
-    }
 };

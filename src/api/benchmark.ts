@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {urls} from '../config';
-import {getAppCheckToken, initializeAppCheck} from '../utils/fb';
 import {BenchmarkResult, DeviceInfo} from '../utils/types';
 
 type SubmissionData = {
@@ -13,13 +12,6 @@ export async function submitBenchmark(
   benchmarkResult: BenchmarkResult,
 ): Promise<{message: string; id: number}> {
   try {
-    initializeAppCheck();
-    const appCheckToken = await getAppCheckToken();
-
-    if (!appCheckToken) {
-      throw new Error('Failed to obtain App Check token');
-    }
-
     const data: SubmissionData = {
       deviceInfo,
       benchmarkResult,
@@ -27,7 +19,6 @@ export async function submitBenchmark(
 
     const response = await axios.post(urls.benchmarkSubmit(), data, {
       headers: {
-        'X-Firebase-AppCheck': appCheckToken,
         'Content-Type': 'application/json',
       },
     });
